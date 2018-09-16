@@ -18,8 +18,12 @@ var commentRoutes       = require("./routes/comments"),
     indexRoutes         = require("./routes/index");
 
 // console.log("Seeds: " +  seedDB);
+console.log("process.env.DATABSEURL is: " + process.env.DATABASEURL);
+mongoose.connect(process.env.DATABASEURL);
+//LOCAL MONGOOSE for reference
 //mongoose.connect("mongodb://localhost:27017/yelp_camp_v13", { useNewUrlParser: true });
-mongoose.connect("mongodb://martin:HYbneijWocEyQu0@ds027744.mlab.com:27744/yelpcamp", { useNewUrlParser: true });
+//PRODUCTION MONGOOSE for reference:
+//mongoose.connect("mongodb://martin:HYbneijWocEyQu0@ds027744.mlab.com:27744/yelpcamp", { useNewUrlParser: true });
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
