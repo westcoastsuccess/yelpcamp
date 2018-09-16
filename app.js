@@ -19,7 +19,7 @@ var commentRoutes       = require("./routes/comments"),
 
 // console.log("Seeds: " +  seedDB);
 console.log("process.env.DATABSEURL is: " + process.env.DATABASEURL);
-mongoose.connect(process.env.DATABASEURL);
+mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true });
 //LOCAL MONGOOSE for reference
 //mongoose.connect("mongodb://localhost:27017/yelp_camp_v13", { useNewUrlParser: true });
 //PRODUCTION MONGOOSE for reference:
